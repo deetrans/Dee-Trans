@@ -7,6 +7,7 @@ import { SERVICES, type Field } from "@/data/services";
 import { LanguagePicker } from "./LanguagePicker";
 import { Button } from "@/components/ui/button";
 
+type Errs = Partial<Record<"full_name" | "email" | "service" | "target_languages" | "consent" | "files", string>>;
 const MAX_FILE = 50 * 1024 * 1024;
 
 export const quoteSchema = z.object({
@@ -43,9 +44,9 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
   const [service, setService] = useState(fixedService ?? "");
   const [source, setSource] = useState<string[]>([]);
   const [targets, setTargets] = useState<string[]>([]);
-  const [extra, setExtra] = useState<Record<string, string>>({});
+  const [extra, setExtra] = useState<Errs>({});
   const [files, setFiles] = useState<File[]>([]);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Errs>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [errMsg, setErrMsg] = useState("");
 
@@ -65,8 +66,8 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
     const parsed = quoteSchema.safeParse(base);
     const tooBig = files.find((f) => f.size > MAX_FILE);
     if (!parsed.success || tooBig) {
-      const errs: Record<string, string> = {};
-      parsed.error?.issues.forEach((i) => (errs[String(i.path[0])] = i.message));
+      const errs: Errs = {};
+      parsed.error?.issues.forEach((i) => (errs[String(i.path[0]) as keyof Errs] = i.message));
       if (tooBig) errs.files = `${tooBig.name} is larger than 50 MB. Please share large files by link in the instructions.`;
       setErrors(errs);
       return;
@@ -94,11 +95,11 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
         file_paths: paths,
         details: {
           ...extra,
-          project_description: fd.get("description"),
-          project_size: fd.get("size"),
-          deadline: fd.get("deadline"),
-          output_format_general: fd.get("output_format_general"),
-          instructions: fd.get("instructions"),
+          project_description: String(fd.get("description") ?? ""),
+          project_size: String(fd.get("size") ?? ""),
+          deadline: String(fd.get("deadline") ?? ""),
+          output_format_general: String(fd.get("output_format_general") ?? ""),
+          instructions: String(fd.get("instructions") ?? ""),
         },
       });
       if (error) throw error;

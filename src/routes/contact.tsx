@@ -18,10 +18,11 @@ const schema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(320),
   message: z.string().trim().min(1, "Please write a message").max(5000),
 });
+type Errs = Partial<Record<"name" | "email" | "message", string>>;
 const inputCls = "h-11 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus:border-teal";
 
 function Contact() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Errs>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   async function submit(e: FormEvent<HTMLFormElement>) {
@@ -31,8 +32,8 @@ function Contact() {
     const data = { name: String(fd.get("name")), email: String(fd.get("email")), message: String(fd.get("message")) };
     const p = schema.safeParse(data);
     if (!p.success) {
-      const errs: Record<string, string> = {};
-      p.error.issues.forEach((i) => (errs[String(i.path[0])] = i.message));
+      const errs: Errs = {};
+      p.error.issues.forEach((i) => (errs[String(i.path[0]) as keyof Errs] = i.message));
       return setErrors(errs);
     }
     setErrors({});

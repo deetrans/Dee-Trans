@@ -71,9 +71,9 @@ export function Header() {
       {open && (
         <nav className="border-t bg-background lg:hidden" aria-label="Mobile">
           <div className="container-site flex flex-col gap-1 py-4">
-            {[
+            {([
               ["/", "Home"], ["/services", "Services"], ["/industries", "Industries"], ["/languages", "Languages"], ["/about", "About Us"], ["/contact", "Contact"],
-            ].map(([to, label]) => (
+            ] as const).map(([to, label]) => (
               <Link key={to} to={to} onClick={() => setOpen(false)} className="rounded-md px-2 py-3 font-semibold text-navy hover:bg-secondary">{label}</Link>
             ))}
             <Button asChild variant="cta" size="lg" className="mt-3"><Link to="/quote" onClick={() => setOpen(false)}>Request a Quote</Link></Button>

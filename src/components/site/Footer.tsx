@@ -25,6 +25,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-navy-foreground/70">
             <li><Link to="/about" className="hover:text-blue">About DEE Trans</Link></li>
             <li><Link to="/industries" className="hover:text-blue">Industries</Link></li>
+            <li><Link to="/portfolio" className="hover:text-blue">Portfolio</Link></li>
             <li><Link to="/languages" className="hover:text-blue">Languages We Support</Link></li>
             <li><Link to="/quote" className="hover:text-blue">Request a Quote</Link></li>
             <li><Link to="/contact" className="hover:text-blue">Contact</Link></li>

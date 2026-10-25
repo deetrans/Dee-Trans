@@ -22,6 +22,7 @@ export function Header() {
             Services <ChevronDown className="h-4 w-4" />
           </button>
           <Link to="/industries" className={linkCls} activeProps={{ className: "text-blue" }}>Industries</Link>
+          <Link to="/portfolio" className={linkCls} activeProps={{ className: "text-blue" }}>Portfolio</Link>
           <button className={`${linkCls} flex items-center gap-1`} aria-expanded={menu === "languages"} onMouseEnter={() => setMenu("languages")} onClick={() => setMenu(menu === "languages" ? null : "languages")}>
             Languages <ChevronDown className="h-4 w-4" />
           </button>
@@ -72,7 +73,7 @@ export function Header() {
         <nav className="border-t bg-background lg:hidden" aria-label="Mobile">
           <div className="container-site flex flex-col gap-1 py-4">
             {([
-              ["/", "Home"], ["/services", "Services"], ["/industries", "Industries"], ["/languages", "Languages"], ["/about", "About Us"], ["/contact", "Contact"],
+              ["/", "Home"], ["/services", "Services"], ["/industries", "Industries"], ["/portfolio", "Portfolio"], ["/languages", "Languages"], ["/about", "About Us"], ["/contact", "Contact"],
             ] as const).map(([to, label]) => (
               <Link key={to} to={to} onClick={() => setOpen(false)} className="rounded-md px-2 py-3 font-semibold text-navy hover:bg-secondary">{label}</Link>
             ))}

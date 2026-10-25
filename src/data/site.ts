@@ -1,2 +1,1 @@
-// Replace with the real business email before launch.
-export const CONTACT_EMAIL = "hello@deetrans.com";
+export const CONTACT_EMAIL = "info@deebestvalue.org";

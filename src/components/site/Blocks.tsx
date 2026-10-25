@@ -38,6 +38,37 @@ export function ServiceCard({ s }: { s: Service }) {
   );
 }
 
+const WORKFLOW_STEPS = [
+  { t: "Share Your Project", d: "Tell us about your content, language requirements, service needs, deadlines, and preferred deliverables." },
+  { t: "Requirements Review", d: "We review the brief and clarify any questions about scope, subject matter, language direction, format, or technical requirements." },
+  { t: "Project Proposal", d: "We confirm feasibility, resource availability, deliverables, pricing, and the proposed timeline before work begins." },
+  { t: "Language Work & Quality Checks", d: "Once the scope and terms are agreed, the project proceeds using appropriate language professionals and the review or quality-assurance steps agreed for the project." },
+  { t: "Delivery", d: "The completed work is delivered in the agreed format and according to the agreed project terms." },
+];
+
+export function HowItWorks() {
+  return (
+    <section className="container-site py-20">
+      <SectionHead
+        eyebrow="How It Works"
+        title="From Brief to Delivery in Five Steps"
+        text="Every project starts with understanding your requirements. We review your brief, clarify the scope, and work with suitable language professionals to deliver the agreed language services."
+        center
+      />
+      <ol className="mt-12 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+        {WORKFLOW_STEPS.map((s, i) => (
+          <li key={s.t} className="rounded-2xl border bg-card p-6">
+            <span className="font-display text-4xl text-blue">0{i + 1}</span>
+            <h3 className="mt-3 font-bold">{s.t}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+          </li>
+        ))}
+      </ol>
+      <div className="mt-10 text-center"><Button asChild variant="cta" size="lg"><Link to="/quote">Request a Quote</Link></Button></div>
+    </section>
+  );
+}
+
 export function FinalCTA() {
   return (
     <section className="container-site py-20">

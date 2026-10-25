@@ -19,7 +19,7 @@ const schema = z.object({
   message: z.string().trim().min(1, "Please write a message").max(5000),
 });
 type Errs = Partial<Record<"name" | "email" | "message", string>>;
-const inputCls = "h-11 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus:border-teal";
+const inputCls = "h-11 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus:border-blue";
 
 function Contact() {
   const [errors, setErrors] = useState<Errs>({});
@@ -47,15 +47,15 @@ function Contact() {
       <PageHero eyebrow="Contact" title="Let's talk about your project" text="Have a question, or a project you'd like to discuss before requesting a quote? Send us a message." />
       <section className="container-site grid gap-12 py-16 lg:grid-cols-[1fr_1.5fr]">
         <div className="space-y-6">
-          <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-4 rounded-2xl border p-6 hover:border-teal">
-            <Mail className="h-6 w-6 text-teal" />
+          <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-4 rounded-2xl border p-6 hover:border-blue">
+            <Mail className="h-6 w-6 text-blue" />
             <span><span className="block text-sm text-muted-foreground">Email</span><span className="font-bold text-navy">{CONTACT_EMAIL}</span></span>
           </a>
-          <p className="text-sm text-muted-foreground">Ready with files and languages? The <Link to="/quote" className="font-semibold text-teal underline">quote form</Link> is the fastest route.</p>
+          <p className="text-sm text-muted-foreground">Ready with files and languages? The <Link to="/quote" className="font-semibold text-blue underline">quote form</Link> is the fastest route.</p>
         </div>
         {status === "done" ? (
-          <div className="rounded-2xl border bg-teal-soft p-10 text-center">
-            <CheckCircle2 className="mx-auto h-12 w-12 text-teal" />
+          <div className="rounded-2xl border bg-blue-soft p-10 text-center">
+            <CheckCircle2 className="mx-auto h-12 w-12 text-blue" />
             <h2 className="mt-4 text-2xl font-bold">Message received</h2>
             <p className="mt-2 text-muted-foreground">Thank you — we'll reply by email.</p>
           </div>

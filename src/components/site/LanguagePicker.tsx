@@ -42,15 +42,15 @@ export function LanguagePicker({ id, label, multiple, value, onChange, required 
   return (
     <div ref={ref} className="relative">
       <label htmlFor={id} className="mb-1.5 block text-sm font-semibold text-navy">
-        {label} {required && <span className="text-teal">*</span>}
+        {label} {required && <span className="text-blue">*</span>}
       </label>
       <div
-        className={cn("flex min-h-11 flex-wrap items-center gap-1.5 rounded-lg border border-input bg-background px-2 py-1.5", open && "border-teal")}
+        className={cn("flex min-h-11 flex-wrap items-center gap-1.5 rounded-lg border border-input bg-background px-2 py-1.5", open && "border-blue")}
         onClick={() => setOpen(true)}
       >
         {multiple &&
           value.map((v) => (
-            <span key={v} className="flex items-center gap-1 rounded-full bg-teal-soft px-2.5 py-1 text-xs font-semibold text-navy">
+            <span key={v} className="flex items-center gap-1 rounded-full bg-blue-soft px-2.5 py-1 text-xs font-semibold text-navy">
               {v}
               <button type="button" aria-label={`Remove ${v}`} onClick={(e) => { e.stopPropagation(); onChange(value.filter((x) => x !== v)); }}>
                 <X className="h-3 w-3" />
@@ -76,7 +76,7 @@ export function LanguagePicker({ id, label, multiple, value, onChange, required 
       {open && (
         <div id={`${id}-list`} role="listbox" className="absolute z-30 mt-1 max-h-72 w-full overflow-auto rounded-lg border bg-popover p-1 shadow-soft">
           {q.trim() && (
-            <button type="button" onClick={() => toggle(q.trim())} className="w-full rounded-md px-3 py-2 text-left text-sm text-teal hover:bg-secondary">
+            <button type="button" onClick={() => toggle(q.trim())} className="w-full rounded-md px-3 py-2 text-left text-sm text-blue hover:bg-secondary">
               Use “{q.trim()}” (variety, dialect, locale or unlisted language)
             </button>
           )}
@@ -87,7 +87,7 @@ export function LanguagePicker({ id, label, multiple, value, onChange, required 
                 <button type="button" role="option" aria-selected={value.includes(l)} key={g.id + l} onClick={() => toggle(l)}
                   className="flex w-full items-center justify-between rounded-md px-3 py-1.5 text-left text-sm hover:bg-secondary">
                   {l}
-                  {value.includes(l) && <Check className="h-4 w-4 text-teal" />}
+                  {value.includes(l) && <Check className="h-4 w-4 text-blue" />}
                 </button>
               ))}
             </div>

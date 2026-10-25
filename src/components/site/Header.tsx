@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
 import { REGIONS } from "@/data/languages";
 
-const linkCls = "text-sm font-semibold text-navy/80 hover:text-teal transition-colors";
+const linkCls = "text-sm font-semibold text-navy/80 hover:text-blue transition-colors";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -17,16 +17,16 @@ export function Header() {
       <div className="container-site flex h-18 items-center justify-between py-4">
         <Logo />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
-          <Link to="/" className={linkCls} activeOptions={{ exact: true }} activeProps={{ className: "text-teal" }}>Home</Link>
+          <Link to="/" className={linkCls} activeOptions={{ exact: true }} activeProps={{ className: "text-blue" }}>Home</Link>
           <button className={`${linkCls} flex items-center gap-1`} aria-expanded={menu === "services"} onMouseEnter={() => setMenu("services")} onClick={() => setMenu(menu === "services" ? null : "services")}>
             Services <ChevronDown className="h-4 w-4" />
           </button>
-          <Link to="/industries" className={linkCls} activeProps={{ className: "text-teal" }}>Industries</Link>
+          <Link to="/industries" className={linkCls} activeProps={{ className: "text-blue" }}>Industries</Link>
           <button className={`${linkCls} flex items-center gap-1`} aria-expanded={menu === "languages"} onMouseEnter={() => setMenu("languages")} onClick={() => setMenu(menu === "languages" ? null : "languages")}>
             Languages <ChevronDown className="h-4 w-4" />
           </button>
-          <Link to="/about" className={linkCls} activeProps={{ className: "text-teal" }}>About Us</Link>
-          <Link to="/contact" className={linkCls} activeProps={{ className: "text-teal" }}>Contact</Link>
+          <Link to="/about" className={linkCls} activeProps={{ className: "text-blue" }}>About Us</Link>
+          <Link to="/contact" className={linkCls} activeProps={{ className: "text-blue" }}>Contact</Link>
         </nav>
         <div className="hidden lg:block">
           <Button asChild variant="cta" size="lg"><Link to="/quote">Request a Quote</Link></Button>
@@ -46,9 +46,9 @@ export function Header() {
               <div className="grid grid-cols-4 gap-x-6 gap-y-5">
                 {SERVICES.map((s) => (
                   <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} onClick={() => setMenu(null)} className="group flex gap-3 rounded-lg p-3 hover:bg-secondary">
-                    <s.icon className="mt-0.5 h-5 w-5 shrink-0 text-teal" />
+                    <s.icon className="mt-0.5 h-5 w-5 shrink-0 text-blue" />
                     <span>
-                      <span className="block text-sm font-bold text-navy group-hover:text-teal">{s.name}</span>
+                      <span className="block text-sm font-bold text-navy group-hover:text-blue">{s.name}</span>
                       <span className="mt-1 line-clamp-2 block text-xs text-muted-foreground">{s.short}</span>
                     </span>
                   </Link>
@@ -57,11 +57,11 @@ export function Header() {
             ) : (
               <div className="flex flex-wrap items-center gap-3">
                 {REGIONS.map((r) => (
-                  <Link key={r.id} to="/languages" hash={r.id} onClick={() => setMenu(null)} className="rounded-full border px-4 py-2 text-sm font-semibold text-navy hover:border-teal hover:text-teal">
+                  <Link key={r.id} to="/languages" hash={r.id} onClick={() => setMenu(null)} className="rounded-full border px-4 py-2 text-sm font-semibold text-navy hover:border-blue hover:text-blue">
                     {r.name}
                   </Link>
                 ))}
-                <Link to="/languages" onClick={() => setMenu(null)} className="ml-auto text-sm font-bold text-teal">Search all languages →</Link>
+                <Link to="/languages" onClick={() => setMenu(null)} className="ml-auto text-sm font-bold text-blue">Search all languages →</Link>
               </div>
             )}
           </div>

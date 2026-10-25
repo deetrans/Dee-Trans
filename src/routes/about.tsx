@@ -49,7 +49,7 @@ function About() {
             "Conduct appropriate quality checks.",
             "Deliver the work in the agreed format.",
           ].map((t, i) => (
-            <li key={t} className="flex gap-4 rounded-xl border p-5"><span className="font-display text-2xl text-teal">{i + 1}</span><span className="pt-1 text-sm">{t}</span></li>
+            <li key={t} className="flex gap-4 rounded-xl border p-5"><span className="font-display text-2xl text-blue">{i + 1}</span><span className="pt-1 text-sm">{t}</span></li>
           ))}
         </ol>
         <p className="mt-6 max-w-2xl text-sm text-muted-foreground">Files you share are stored privately and used only to assess and complete your project. Ask us if your project needs a confidentiality agreement.</p>

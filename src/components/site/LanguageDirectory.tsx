@@ -25,7 +25,7 @@ export function LanguageDirectory({ preview = false }: { preview?: boolean }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search a language, e.g. Yoruba, Swahili, Portuguese…"
-          className="h-14 w-full rounded-full border border-input bg-background pl-12 pr-5 text-base shadow-soft outline-none focus:border-teal"
+          className="h-14 w-full rounded-full border border-input bg-background pl-12 pr-5 text-base shadow-soft outline-none focus:border-blue"
         />
       </label>
 
@@ -58,7 +58,7 @@ export function LanguageDirectory({ preview = false }: { preview?: boolean }) {
                       <li key={l} className="rounded-full bg-secondary px-3 py-1.5 text-sm text-foreground">{l}</li>
                     ))}
                     {shown.length < r.matches.length && (
-                      <li className="px-2 py-1.5 text-sm font-semibold text-teal">+{r.matches.length - shown.length} more</li>
+                      <li className="px-2 py-1.5 text-sm font-semibold text-blue">+{r.matches.length - shown.length} more</li>
                     )}
                   </ul>
                   {r.note && <p className="mt-4 text-xs text-muted-foreground">{r.note} Not listed? Request it as “Other”.</p>}

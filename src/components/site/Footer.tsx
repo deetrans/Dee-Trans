@@ -16,26 +16,26 @@ export function Footer() {
           <h3 className="text-sm font-bold text-navy-foreground">Services</h3>
           <ul className="mt-4 space-y-2 text-sm text-navy-foreground/70">
             {SERVICES.map((s) => (
-              <li key={s.slug}><Link to="/services/$slug" params={{ slug: s.slug }} className="hover:text-teal">{s.name}</Link></li>
+              <li key={s.slug}><Link to="/services/$slug" params={{ slug: s.slug }} className="hover:text-blue">{s.name}</Link></li>
             ))}
           </ul>
         </div>
         <div>
           <h3 className="text-sm font-bold text-navy-foreground">Company</h3>
           <ul className="mt-4 space-y-2 text-sm text-navy-foreground/70">
-            <li><Link to="/about" className="hover:text-teal">About DEE Trans</Link></li>
-            <li><Link to="/industries" className="hover:text-teal">Industries</Link></li>
-            <li><Link to="/languages" className="hover:text-teal">Languages We Support</Link></li>
-            <li><Link to="/quote" className="hover:text-teal">Request a Quote</Link></li>
-            <li><Link to="/contact" className="hover:text-teal">Contact</Link></li>
+            <li><Link to="/about" className="hover:text-blue">About DEE Trans</Link></li>
+            <li><Link to="/industries" className="hover:text-blue">Industries</Link></li>
+            <li><Link to="/languages" className="hover:text-blue">Languages We Support</Link></li>
+            <li><Link to="/quote" className="hover:text-blue">Request a Quote</Link></li>
+            <li><Link to="/contact" className="hover:text-blue">Contact</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="text-sm font-bold text-navy-foreground">Get in touch</h3>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="mt-4 block text-sm text-navy-foreground/70 hover:text-teal">{CONTACT_EMAIL}</a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="mt-4 block text-sm text-navy-foreground/70 hover:text-blue">{CONTACT_EMAIL}</a>
           <ul className="mt-6 space-y-2 text-sm text-navy-foreground/70">
-            <li><Link to="/privacy" className="hover:text-teal">Privacy Policy</Link></li>
-            <li><Link to="/terms" className="hover:text-teal">Terms and Conditions</Link></li>
+            <li><Link to="/privacy" className="hover:text-blue">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-blue">Terms and Conditions</Link></li>
           </ul>
         </div>
       </div>

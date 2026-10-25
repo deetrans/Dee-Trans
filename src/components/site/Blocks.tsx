@@ -29,11 +29,11 @@ export function SectionHead({ eyebrow, title, text, center }: { eyebrow?: string
 
 export function ServiceCard({ s }: { s: Service }) {
   return (
-    <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex flex-col rounded-2xl border bg-card p-6 transition hover:-translate-y-1 hover:border-teal hover:shadow-soft">
-      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-soft text-teal"><s.icon className="h-5 w-5" /></span>
+    <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex flex-col rounded-2xl border bg-card p-6 transition hover:-translate-y-1 hover:border-blue hover:shadow-soft">
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-soft text-blue"><s.icon className="h-5 w-5" /></span>
       <h3 className="mt-5 text-lg font-bold">{s.name}</h3>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.short}</p>
-      <span className="mt-5 flex items-center gap-1 text-sm font-bold text-teal">Learn More <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></span>
+      <span className="mt-5 flex items-center gap-1 text-sm font-bold text-blue">Learn More <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></span>
     </Link>
   );
 }

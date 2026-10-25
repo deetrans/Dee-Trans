@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as LanguagesRouteImport } from './routes/languages'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -44,6 +45,11 @@ const IndustriesRoute = IndustriesRouteImport.update({
 const LanguagesRoute = LanguagesRouteImport.update({
   id: '/languages',
   path: '/languages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/languages': typeof LanguagesRoute
+  '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/languages': typeof LanguagesRoute
+  '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/languages': typeof LanguagesRoute
+  '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/industries'
     | '/languages'
+    | '/portfolio'
     | '/privacy'
     | '/quote'
     | '/sitemap.xml'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/industries'
     | '/languages'
+    | '/portfolio'
     | '/privacy'
     | '/quote'
     | '/sitemap.xml'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/industries'
     | '/languages'
+    | '/portfolio'
     | '/privacy'
     | '/quote'
     | '/sitemap.xml'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
   LanguagesRoute: typeof LanguagesRoute
+  PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
   QuoteRoute: typeof QuoteRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -208,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/languages'
       fullPath: '/languages'
       preLoaderRoute: typeof LanguagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
   LanguagesRoute: LanguagesRoute,
+  PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,
   QuoteRoute: QuoteRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

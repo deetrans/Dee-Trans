@@ -5,7 +5,7 @@ import subtitling from "@/assets/subtitling.jpg";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
 import { INDUSTRIES } from "@/data/industries";
-import { ServiceCard, SectionHead, FinalCTA } from "@/components/site/Blocks";
+import { ServiceCard, SectionHead, HowItWorks, FinalCTA } from "@/components/site/Blocks";
 import { LanguageDirectory } from "@/components/site/LanguageDirectory";
 import { seo } from "@/lib/seo";
 
@@ -26,12 +26,6 @@ const BENEFITS = [
   { icon: MessagesSquare, t: "Clear communication", d: "Practical coordination from initial request to final delivery." },
 ];
 
-const STEPS = [
-  ["Tell us about your project", "Share your service, languages, files, and requirements."],
-  ["Receive a project assessment", "We review the scope and provide a quote."],
-  ["Complete the agreed work", "The project follows the confirmed workflow and deliverables."],
-  ["Receive your files", "Get the completed work in your requested format."],
-];
 
 function Home() {
   return (
@@ -127,19 +121,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="container-site py-20">
-        <SectionHead eyebrow="How it works" title="From brief to delivery in four steps" center />
-        <ol className="mt-12 grid gap-6 md:grid-cols-4">
-          {STEPS.map(([t, d], i) => (
-            <li key={t} className="rounded-2xl border bg-card p-6">
-              <span className="font-display text-4xl text-blue">0{i + 1}</span>
-              <h3 className="mt-3 font-bold">{t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-10 text-center"><Button asChild variant="cta" size="lg"><Link to="/quote">Start Your Project</Link></Button></div>
-      </section>
+      <HowItWorks />
 
       <FinalCTA />
     </>

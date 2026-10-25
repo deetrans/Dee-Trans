@@ -14,9 +14,18 @@ export type Field = {
   placeholder?: string;
 };
 
+export type ServiceCategory = "core" | "creative" | "specialized";
+
+export const SERVICE_CATEGORIES: { id: ServiceCategory; name: string; text: string }[] = [
+  { id: "core", name: "Core Language Services", text: "Translation, subtitling, proofreading, and transcription — the foundation of most multilingual projects." },
+  { id: "creative", name: "Creative & Digital Language Services", text: "Copywriting, transcreation, and linguistic quality assurance for content that has to perform in every language." },
+  { id: "specialized", name: "Specialized Language Support", text: "Localization testing and language-data services for software, AI, and research projects." },
+];
+
 export type Service = {
   slug: string;
   name: string;
+  category: ServiceCategory;
   short: string;
   icon: LucideIcon;
   image: string;

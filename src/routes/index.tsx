@@ -5,7 +5,7 @@ import subtitling from "@/assets/subtitling.jpg";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
 import { INDUSTRIES } from "@/data/industries";
-import { ServiceCard, SectionHead, FinalCTA } from "@/components/site/Blocks";
+import { ServiceCard, SectionHead, HowItWorks, FinalCTA } from "@/components/site/Blocks";
 import { LanguageDirectory } from "@/components/site/LanguageDirectory";
 import { seo } from "@/lib/seo";
 
@@ -26,12 +26,6 @@ const BENEFITS = [
   { icon: MessagesSquare, t: "Clear communication", d: "Practical coordination from initial request to final delivery." },
 ];
 
-const STEPS = [
-  ["Tell us about your project", "Share your service, languages, files, and requirements."],
-  ["Receive a project assessment", "We review the scope and provide a quote."],
-  ["Complete the agreed work", "The project follows the confirmed workflow and deliverables."],
-  ["Receive your files", "Get the completed work in your requested format."],
-];
 
 function Home() {
   return (
@@ -41,7 +35,7 @@ function Home() {
           <div>
             <p className="eyebrow">Global Language, Localization & Linguistic Services</p>
             <h1 className="font-display mt-5 text-5xl leading-[1.05] md:text-7xl">
-              Your Words. <span className="text-teal">Every Language.</span> Every Audience.
+              Your Words. <span className="text-blue">Every Language.</span> Every Audience.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
               DEE Trans helps businesses, creators, and organizations communicate across languages and cultures. From translation and subtitles to transcription, linguistic quality assurance, app testing, copywriting, and data annotation, we help your content reach the people who matter.
@@ -78,7 +72,7 @@ function Home() {
           <p className="mt-4 text-muted-foreground">SRT subtitle translation, subtitle creation from scripts or transcripts, timing and readability review, and subtitle LQA for films, courses, and social video.</p>
           <ul className="mt-6 grid gap-2 text-sm sm:grid-cols-2">
             {["SRT & VTT translation", "Subtitle proofreading", "Timing & sync review", "Subtitle quality assurance"].map((x) => (
-              <li key={x} className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-teal" />{x}</li>
+              <li key={x} className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-blue" />{x}</li>
             ))}
           </ul>
           <Button asChild variant="navy" size="lg" className="mt-8"><Link to="/services/$slug" params={{ slug: "subtitle-translation" }}>Explore subtitling</Link></Button>
@@ -92,7 +86,7 @@ function Home() {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {BENEFITS.map((b) => (
               <div key={b.t} className="border-t border-navy-foreground/20 pt-6">
-                <b.icon className="h-6 w-6 text-teal" />
+                <b.icon className="h-6 w-6 text-blue" />
                 <h3 className="mt-4 text-lg font-bold text-navy-foreground">{b.t}</h3>
                 <p className="mt-2 text-sm text-navy-foreground/70">{b.d}</p>
               </div>
@@ -104,12 +98,12 @@ function Home() {
       <section className="container-site py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHead eyebrow="Industries" title="Language Services Across Industries" />
-          <Link to="/industries" className="flex items-center gap-1 text-sm font-bold text-teal">All industries <ArrowRight className="h-4 w-4" /></Link>
+          <Link to="/industries" className="flex items-center gap-1 text-sm font-bold text-blue">All industries <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {INDUSTRIES.map((i) => (
             <div key={i.name} className="rounded-2xl border p-5">
-              <i.icon className="h-5 w-5 text-teal" />
+              <i.icon className="h-5 w-5 text-blue" />
               <h3 className="mt-3 text-sm font-bold">{i.name}</h3>
               <p className="mt-2 text-xs text-muted-foreground">{i.text}</p>
             </div>
@@ -127,19 +121,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="container-site py-20">
-        <SectionHead eyebrow="How it works" title="From brief to delivery in four steps" center />
-        <ol className="mt-12 grid gap-6 md:grid-cols-4">
-          {STEPS.map(([t, d], i) => (
-            <li key={t} className="rounded-2xl border bg-card p-6">
-              <span className="font-display text-4xl text-teal">0{i + 1}</span>
-              <h3 className="mt-3 font-bold">{t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-10 text-center"><Button asChild variant="cta" size="lg"><Link to="/quote">Start Your Project</Link></Button></div>
-      </section>
+      <HowItWorks />
 
       <FinalCTA />
     </>

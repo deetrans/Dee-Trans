@@ -18,7 +18,7 @@ export const quoteSchema = z.object({
   consent: z.literal(true, { errorMap: () => ({ message: "Please accept the privacy policy" }) }),
 });
 
-const inputCls = "h-11 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus:border-teal";
+const inputCls = "h-11 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus:border-blue";
 const labelCls = "mb-1.5 block text-sm font-semibold text-navy";
 
 function DynField({ f, value, onChange }: { f: Field; value: string; onChange: (v: string) => void }) {
@@ -112,8 +112,8 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
 
   if (status === "done")
     return (
-      <div className="rounded-2xl border bg-teal-soft p-10 text-center">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-teal" />
+      <div className="rounded-2xl border bg-blue-soft p-10 text-center">
+        <CheckCircle2 className="mx-auto h-12 w-12 text-blue" />
         <h3 className="mt-4 text-2xl font-bold">Thank you — your request was received.</h3>
         <p className="mt-2 text-muted-foreground">We will review your project and reply by email with an assessment and quote.</p>
       </div>
@@ -124,12 +124,12 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="full_name" className={labelCls}>Full name <span className="text-teal">*</span></label>
+          <label htmlFor="full_name" className={labelCls}>Full name <span className="text-blue">*</span></label>
           <input id="full_name" name="full_name" autoComplete="name" className={inputCls} />
           {errors.full_name && <p className="mt-1 text-xs text-destructive">{errors.full_name}</p>}
         </div>
         <div>
-          <label htmlFor="email" className={labelCls}>Email address <span className="text-teal">*</span></label>
+          <label htmlFor="email" className={labelCls}>Email address <span className="text-blue">*</span></label>
           <input id="email" name="email" type="email" autoComplete="email" className={inputCls} />
           {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
         </div>
@@ -143,7 +143,7 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
         </div>
         {!fixedService && (
           <div className="sm:col-span-2">
-            <label htmlFor="service" className={labelCls}>Service required <span className="text-teal">*</span></label>
+            <label htmlFor="service" className={labelCls}>Service required <span className="text-blue">*</span></label>
             <select id="service" value={service} onChange={(e) => { setService(e.target.value); setExtra({}); }} className={inputCls}>
               <option value="">Choose a service…</option>
               {SERVICES.map((s) => <option key={s.slug} value={s.slug}>{s.name}</option>)}
@@ -184,8 +184,8 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
         </div>
         <div className="sm:col-span-2">
           <span className={labelCls}>Files</span>
-          <label htmlFor="files" className="flex cursor-pointer items-center gap-3 rounded-lg border border-dashed border-input px-4 py-5 text-sm text-muted-foreground hover:border-teal">
-            <Upload className="h-5 w-5 text-teal" />
+          <label htmlFor="files" className="flex cursor-pointer items-center gap-3 rounded-lg border border-dashed border-input px-4 py-5 text-sm text-muted-foreground hover:border-blue">
+            <Upload className="h-5 w-5 text-blue" />
             {files.length ? files.map((f) => f.name).join(", ") : "Upload documents, video, audio, subtitles or samples (max 50 MB each)"}
           </label>
           <input id="files" type="file" multiple className="sr-only" onChange={(e) => setFiles(Array.from(e.target.files ?? []))} />
@@ -197,8 +197,8 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
         </div>
         <div className="sm:col-span-2">
           <label className="flex items-start gap-3 text-sm">
-            <input type="checkbox" name="consent" className="mt-1 h-4 w-4 accent-[var(--teal)]" />
-            <span>I agree that DEE Trans may store and process my details and files to respond to this request, as described in the <Link to="/privacy" className="font-semibold text-teal underline">Privacy Policy</Link>. <span className="text-teal">*</span></span>
+            <input type="checkbox" name="consent" className="mt-1 h-4 w-4 accent-[var(--blue)]" />
+            <span>I agree that DEE Trans may store and process my details and files to respond to this request, as described in the <Link to="/privacy" className="font-semibold text-blue underline">Privacy Policy</Link>. <span className="text-blue">*</span></span>
           </label>
           {errors.consent && <p className="mt-1 text-xs text-destructive">{errors.consent}</p>}
         </div>

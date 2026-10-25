@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SERVICES } from "@/data/services";
-import { PageHero, ServiceCard, FinalCTA } from "@/components/site/Blocks";
+import { SERVICES, SERVICE_CATEGORIES } from "@/data/services";
+import { PageHero, ServiceCard, HowItWorks, FinalCTA } from "@/components/site/Blocks";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/")({
@@ -8,9 +8,16 @@ export const Route = createFileRoute("/services/")({
   component: () => (
     <>
       <PageHero eyebrow="Services" title="Language Services for a Connected World" text="Eight services, one project-focused approach. Choose a service to see what's included and request a tailored quote." />
-      <section className="container-site grid gap-5 py-16 sm:grid-cols-2 lg:grid-cols-4">
-        {SERVICES.map((s) => <ServiceCard key={s.slug} s={s} />)}
-      </section>
+      {SERVICE_CATEGORIES.map((c) => (
+        <section key={c.id} className="container-site py-14">
+          <h2 className="font-display text-2xl md:text-3xl">{c.name}</h2>
+          <p className="mt-2 max-w-2xl text-muted-foreground">{c.text}</p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {SERVICES.filter((s) => s.category === c.id).map((s) => <ServiceCard key={s.slug} s={s} />)}
+          </div>
+        </section>
+      ))}
+      <HowItWorks />
       <FinalCTA />
     </>
   ),

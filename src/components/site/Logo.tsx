@@ -18,7 +18,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
     <Link to="/" className="flex items-center gap-2.5" aria-label="DEE Trans home">
       <LogoMark />
       <span className={cn("text-xl font-extrabold tracking-tight", inverted ? "text-navy-foreground" : "text-navy")}>
-        DEE<span className="font-medium text-teal"> Trans</span>
+        DEE<span className="font-medium text-blue"> Trans</span>
       </span>
     </Link>
   );

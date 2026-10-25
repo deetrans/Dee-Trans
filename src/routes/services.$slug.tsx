@@ -42,14 +42,14 @@ function ServicePage() {
           <h2 className="font-display text-3xl">What we offer</h2>
           <ul className="mt-6 space-y-3">
             {s.offerings.map((o) => (
-              <li key={o} className="flex gap-3"><Check className="mt-0.5 h-5 w-5 shrink-0 text-teal" />{o}</li>
+              <li key={o} className="flex gap-3"><Check className="mt-0.5 h-5 w-5 shrink-0 text-blue" />{o}</li>
             ))}
           </ul>
           {s.formats && (
             <div className="mt-10">
               <h3 className="text-lg font-bold">Formats</h3>
               <div className="mt-3 flex flex-wrap gap-2">
-                {s.formats.map((f) => <span key={f} className="rounded-full bg-teal-soft px-3 py-1.5 text-sm font-semibold text-navy">{f}</span>)}
+                {s.formats.map((f) => <span key={f} className="rounded-full bg-blue-soft px-3 py-1.5 text-sm font-semibold text-navy">{f}</span>)}
               </div>
             </div>
           )}
@@ -59,7 +59,7 @@ function ServicePage() {
           <ol className="mt-6 space-y-4">
             {s.workflow.map((w, i) => (
               <li key={w} className="flex gap-4 rounded-xl border p-4">
-                <span className="font-display text-2xl text-teal">{i + 1}</span>
+                <span className="font-display text-2xl text-blue">{i + 1}</span>
                 <span className="pt-1 text-sm">{w}</span>
               </li>
             ))}
@@ -72,7 +72,7 @@ function ServicePage() {
               ) : (
                 <dl className="mt-3 space-y-3">
                   {s.explainer.items.map((it) => (
-                    <div key={it.term}><dt className="font-bold text-teal">{it.term}</dt><dd className="text-sm text-navy-foreground/80">{it.text}</dd></div>
+                    <div key={it.term}><dt className="font-bold text-blue">{it.term}</dt><dd className="text-sm text-navy-foreground/80">{it.text}</dd></div>
                   ))}
                 </dl>
               )}
@@ -94,7 +94,7 @@ function ServicePage() {
         <h2 className="text-xl font-bold">Related services</h2>
         <div className="mt-5 flex flex-wrap gap-3">
           {others.map((o) => (
-            <Link key={o.slug} to="/services/$slug" params={{ slug: o.slug }} className="rounded-full border px-4 py-2 text-sm font-semibold hover:border-teal hover:text-teal">{o.name}</Link>
+            <Link key={o.slug} to="/services/$slug" params={{ slug: o.slug }} className="rounded-full border px-4 py-2 text-sm font-semibold hover:border-blue hover:text-blue">{o.name}</Link>
           ))}
         </div>
       </section>

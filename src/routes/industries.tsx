@@ -11,7 +11,7 @@ export const Route = createFileRoute("/industries")({
       <section className="container-site grid gap-6 py-16 md:grid-cols-2">
         {INDUSTRIES.map((i) => (
           <article key={i.name} className="flex gap-5 rounded-2xl border p-7">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-soft text-teal"><i.icon className="h-6 w-6" /></span>
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-soft text-blue"><i.icon className="h-6 w-6" /></span>
             <div>
               <h2 className="text-xl font-bold">{i.name}</h2>
               <p className="mt-2 text-muted-foreground">{i.text}</p>

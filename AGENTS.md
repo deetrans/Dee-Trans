@@ -12,3 +12,5 @@
 ## Project rules
 - Service pages, quote-form extra fields, languages and industries are data-driven from `src/data/*`; edit data, not page markup, so all pages and forms stay in sync.
 - Public forms insert directly into insert-only tables (no anon SELECT) and upload to the private `quote-files` bucket under `uploads/`; never add public read access to submissions.
+- Brand color tokens are `--blue`/`--blue-soft`/`--blue-bright`/`--navy` in src/styles.css (utilities `text-blue`, `bg-blue-soft`, etc.); the old `teal` tokens were removed — never reintroduce them.
+- Portfolio samples are data-driven from `src/data/portfolio.ts`; every sample must keep its "Demonstration Sample" label.

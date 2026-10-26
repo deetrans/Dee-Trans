@@ -156,6 +156,9 @@ export function QuoteForm({ fixedService, cta = "Submit request" }: { fixedServi
           <LanguagePicker id="targets" label="Target language(s)" multiple required value={targets} onChange={setTargets} />
           {errors.target_languages && <p className="mt-1 text-xs text-destructive">{errors.target_languages}</p>}
         </div>
+        <p className="rounded-lg bg-blue-soft p-3 text-xs text-muted-foreground sm:col-span-2">
+          You can type any language, variety, or dialect even if it is not listed. Language availability and suitable professional resources are confirmed individually for each project — requesting a language does not guarantee its availability.
+        </p>
 
         {svc && svc.fields.length > 0 && (
           <fieldset className="grid gap-5 rounded-xl bg-secondary p-5 sm:col-span-2 sm:grid-cols-2">

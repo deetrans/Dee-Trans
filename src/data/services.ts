@@ -47,6 +47,7 @@ const yesNo = ["Yes", "No"];
 export const SERVICES: Service[] = [
   {
     slug: "translation-localization",
+    category: "core" as const,
     name: "Translation & Localization",
     short: "Translate documents, websites, software, and digital content while preserving meaning, tone, and cultural relevance.",
     icon: Languages,
@@ -83,6 +84,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "subtitle-translation",
+    category: "core" as const,
     name: "Subtitle Translation & Subtitling",
     short: "Translate subtitles, prepare SRT files, and support audiovisual localization and subtitle review.",
     icon: Captions,
@@ -120,6 +122,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "proofreading-review",
+    category: "core" as const,
     name: "Proofreading & Linguistic Review",
     short: "Improve grammar, spelling, clarity, fluency, terminology, and consistency.",
     icon: SpellCheck,
@@ -162,6 +165,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "audio-transcription",
+    category: "core" as const,
     name: "Audio Transcription",
     short: "Convert audio and video recordings into accurate, readable transcripts in the requested language and format.",
     icon: AudioLines,
@@ -206,6 +210,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "copywriting-transcreation",
+    category: "creative" as const,
     name: "Copywriting & Transcreation",
     short: "Create and adapt engaging content for different audiences, cultures, and communication objectives.",
     icon: PenLine,
@@ -250,6 +255,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "linguistic-quality-assurance",
+    category: "creative" as const,
     name: "Linguistic Quality Assurance (LQA)",
     short: "Evaluate translated content for accuracy, consistency, terminology, cultural appropriateness, and guideline compliance.",
     icon: ShieldCheck,
@@ -292,6 +298,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "app-testing",
+    category: "specialized" as const,
     name: "App Testing & Localization Testing",
     short: "Test multilingual apps, websites, and software interfaces for language errors, display problems, and locale issues.",
     icon: Smartphone,
@@ -335,6 +342,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "data-annotation",
+    category: "specialized" as const,
     name: "Data Annotation",
     short: "Label, classify, and review linguistic data for AI, machine learning, language technology, and research.",
     icon: Tags,

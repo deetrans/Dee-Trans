@@ -9,7 +9,7 @@ import { CONTACT_EMAIL } from "@/data/site";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: seo("Contact DEE Trans", "Get in touch with DEE Trans to discuss a translation, subtitling, transcription or localization project.") }),
+  head: () => ({ meta: seo("Contact DEE Trans | Request Language Services", "Get in touch with DEE Trans to discuss a translation, subtitling, transcription or localization project.") }),
   component: Contact,
 });
 

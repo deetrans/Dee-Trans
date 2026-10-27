@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Target, Globe2, ClipboardList, MessagesSquare, ArrowRight, Captions } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/international-collaboration.jpg";
 import subtitling from "@/assets/subtitling.jpg";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
@@ -46,7 +46,7 @@ function Home() {
             </div>
           </div>
           <div className="relative">
-            <img src={hero} alt="Linguist working with multilingual content on a laptop in a modern office" width={1600} height={1104} className="aspect-[4/3.4] w-full rounded-[2rem] object-cover shadow-soft" />
+            <img src={hero} alt="International professionals collaborating on multilingual business projects" width={1600} height={1360} fetchPriority="high" className="aspect-[4/3.4] w-full rounded-[2rem] bg-secondary object-cover object-center shadow-soft" />
             <div className="absolute -bottom-6 left-6 hidden rounded-2xl border bg-card p-5 shadow-soft md:block">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">8 services · 9 language regions</p>
               <p className="mt-1 text-sm font-semibold text-navy">From one brief to every audience.</p>

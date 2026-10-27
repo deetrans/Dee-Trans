@@ -7,12 +7,12 @@ export const Route = createFileRoute("/terms")({
   head: () => ({ meta: seo("Terms and Conditions | DEE Trans", "Terms governing use of the DEE Trans website and language services.") }),
   component: () => (
     <>
-      <PageHero eyebrow="Legal" title="Terms and Conditions" text="Draft for owner review — not yet finalized.">
+      <PageHero eyebrow="Legal" title="Terms and Conditions" text="The terms that govern use of the DEE Trans website and our language services.">
         <p className="mt-4 text-sm text-muted-foreground">Last updated: <time dateTime="2026-10-27">27 October 2026</time></p>
       </PageHero>
       <Prose>
         <h2>1. Introduction</h2>
-        <p>Welcome to DEE Trans. These draft Terms and Conditions describe use of our website and the general process for requesting language services. They remain subject to owner review and are not a finalized project agreement.</p>
+        <p>Welcome to DEE Trans. These Terms and Conditions describe use of our website and the general process for requesting language services.</p>
         <p>These website terms do not replace a separate written agreement, quotation, purchase order, or statement of work that DEE Trans and a client may enter into for a particular project.</p>
         <h2>2. Our Services</h2>
         <p>DEE Trans coordinates language services that may include:</p>
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/terms")({
         <p>Publishing client materials, identifying clients publicly, or using confidential project content as a portfolio sample requires appropriate authorization.</p>
         <h2>7. Confidentiality and Data Protection</h2>
         <p>DEE Trans aims to handle client information and project materials confidentially and use them for legitimate business and project purposes. Relevant information may need to be shared with service providers or language professionals to assess or perform an agreed project, with confidentiality arrangements agreed for that work.</p>
-        <p>Do not submit highly sensitive materials until you have confirmed that available handling arrangements meet your requirements. Personal information handling is described in our <Link to="/privacy" className="text-blue underline">Privacy Policy</Link>, which also remains subject to owner review.</p>
+        <p>Do not submit highly sensitive materials until you have confirmed that available handling arrangements meet your requirements. Personal information handling is described in our <Link to="/privacy" className="text-blue underline">Privacy Policy</Link>.</p>
         <h2>8. Quality, Reviews, and Revisions</h2>
         <p>Requirements and quality checks vary by service and agreed scope. Included proofreading, independent review, quality assurance, testing, or revisions are to be described in the quotation or project agreement.</p>
         <p>Clients should report concerns within any agreed review period with enough detail for assessment. No particular business outcome or error-free performance is guaranteed by the website. Any express project commitment remains subject to the agreement and applicable law.</p>
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/terms")({
         <h2>14. Changes to These Terms</h2>
         <p>These terms may be updated to reflect changes to the website, services, or applicable requirements. Updated terms will appear on this page with a revised date. Changes to an existing project agreement are handled according to that agreement and applicable law.</p>
         <h2>15. Governing Law and Disputes</h2>
-        <p>These draft website terms do not designate a governing jurisdiction or dispute-resolution forum. Any project-specific provisions must be agreed in writing subject to applicable law and rights that cannot legally be excluded.</p>
+        <p>These website terms do not designate a governing jurisdiction or dispute-resolution forum. Any project-specific provisions must be agreed in writing subject to applicable law and rights that cannot legally be excluded.</p>
         <h2>16. Contact</h2>
         <p>For questions about these terms, contact DEE Trans.</p>
         <p>Email: <a href={`mailto:${CONTACT_EMAIL}`} className="text-blue underline">{CONTACT_EMAIL}</a><br />Website: <a href="https://dee-trans.lovable.app/" className="break-all text-blue underline">https://dee-trans.lovable.app/</a></p>

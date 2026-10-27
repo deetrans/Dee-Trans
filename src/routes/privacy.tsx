@@ -7,7 +7,7 @@ export const Route = createFileRoute("/privacy")({
   head: () => ({ meta: seo("Privacy Policy | DEE Trans", "How DEE Trans collects, stores and uses personal information and project files.") }),
   component: () => (
     <>
-      <PageHero eyebrow="Legal" title="Privacy Policy" text="Draft for owner review — not yet finalized.">
+      <PageHero eyebrow="Legal" title="Privacy Policy" text="How DEE Trans collects, uses, and protects your information and project files.">
         <p className="mt-4 text-sm text-muted-foreground">Last updated: <time dateTime="2026-10-27">27 October 2026</time></p>
       </PageHero>
       <Prose>
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/privacy")({
         <p>Retention needs depend on project coordination, business records, dispute resolution, and applicable legal obligations. Specific retention periods and deletion procedures have not yet been confirmed for this policy. Contact DEE Trans to discuss retention requirements before submitting materials that require a defined deletion schedule.</p>
         <h2>7. Cookies and Technical Data</h2>
         <p>The website or its service providers may use essential technologies to operate the website, maintain security, understand performance, or remember preferences.</p>
-        <p>This draft does not confirm a complete inventory of provider cookies or tracking technologies. Any use of non-essential analytics or advertising technologies requires appropriate disclosure and any legally required consent.</p>
+        <p>This policy does not confirm a complete inventory of provider cookies or tracking technologies. Any use of non-essential analytics or advertising technologies requires appropriate disclosure and any legally required consent.</p>
         <p>You can manage cookies through your browser settings, although disabling certain cookies may affect website functionality.</p>
         <h2>8. Data Security</h2>
         <p>No website or method of electronic transmission can be guaranteed completely secure. This policy does not assert particular encryption standards, certifications, or safeguards beyond the storage and public-access settings described above.</p>

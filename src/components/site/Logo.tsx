@@ -1,13 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/dee-trans-logo.png.asset.json";
 
 export function LogoMark({ className }: { className?: string }) {
   return (
     <img
-      src={logoAsset.url}
-      alt=""
-      aria-hidden="true"
+      src="/dee-trans-logo.png"
+      alt="DEE Trans"
       className={cn("h-10 w-10 rounded-lg object-contain", className)}
     />
   );
